@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .link{
+        @apply cursor-pointer hover:underline;
+    }
+
+    .button {
+        @apply transition ease-in-out delay-150 bg-purple-400 hover:-translate-y-1 hover:scale-110 hover:bg-purple-500 duration-300 p-2 text-xs md:text-sm;
+    }
+}
