@@ -3,12 +3,23 @@ import React from 'react'
 
 import {MagnifyingGlassIcon, ShoppingBagIcon, UserCircleIcon, Bars3Icon, CheckCircleIcon} from "@heroicons/react/24/solid";
 
+import { signIn, signOut, useSession } from "next-auth/react";
+
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { selectItems } from "../slices/basketSlice";
+
 function Header() {
+
+    const router = useRouter();
+
+    const items = useSelector(selectItems);
   return (
     <header>
         <div className="flex items-center bg-sneaktreat_white p-2 flex-grow py-2">
             <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
-                <Image  
+                <Image 
+                    onClick={() => router.push('/')}
                     src='https://i.imgur.com/Jm6uMeX.png'
                     width={200}
                     height={60}
@@ -23,7 +34,7 @@ function Header() {
             </div>
 
             <div className="text-white flex items-center text-xs space-x-7 mx-6 whitespace-nowrap">
-                <div className="link">
+                <div onClick={signIn} className="link">
                      <UserCircleIcon className="h-7" />
                      <p className="font-bold md:text-sm">Profile</p>
                 </div>
@@ -32,9 +43,11 @@ function Header() {
                     <p className="font-bold md:text-sm">Orders</p>
                 </div>
 
-                <div className="relative link flex items-center">
+                <div onClick={() => router.push('/checkout')} className="relative link flex items-center">
 
-                    <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-purple-400 text-center rounded-full text-white font-bold">0</span>
+                    <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-purple-400 text-center rounded-full text-white font-bold">
+                        {items.length}
+                    </span>
                     <ShoppingBagIcon className="h-7" />
                     <p className="hidden md:inline font-bold md:text-sm mt-1">Cart</p>
                 </div>
