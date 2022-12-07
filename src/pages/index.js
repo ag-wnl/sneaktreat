@@ -25,7 +25,7 @@ export default function Home({ products }) {
 }
 
 export async function getServerSideProps(context) {
-    const products = await fetch("https://api.npoint.io/aba6b790defc7eca5836").then(
+    const products = await fetch("https://api.npoint.io/06c058f2d597ee5251d3").then(
       (res) => res.json()
     );
 

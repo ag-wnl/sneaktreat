@@ -11,7 +11,7 @@ import { selectItems } from "../slices/basketSlice";
 
 function Header() {
 
-    const {session} = useSession();
+    const {data : session} = useSession();
 
     const router = useRouter();
 
