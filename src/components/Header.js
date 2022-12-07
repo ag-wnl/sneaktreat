@@ -3,13 +3,15 @@ import React from 'react'
 
 import {MagnifyingGlassIcon, ShoppingBagIcon, UserCircleIcon, Bars3Icon, CheckCircleIcon} from "@heroicons/react/24/solid";
 
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react"
 
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { selectItems } from "../slices/basketSlice";
 
 function Header() {
+
+    const {session} = useSession();
 
     const router = useRouter();
 
@@ -34,9 +36,11 @@ function Header() {
             </div>
 
             <div className="text-white flex items-center text-xs space-x-7 mx-6 whitespace-nowrap">
-                <div onClick={signIn} className="link">
-                     <UserCircleIcon className="h-7" />
-                     <p className="font-bold md:text-sm">Profile</p>
+                <div onClick={!session ? signIn : signOut} className="link">
+                     <UserCircleIcon    className="h-7" />
+                     <p className="font-bold md:text-sm">
+                        {session ? `Hi ${session.user.name}` : "Sign In"}
+                     </p>
                 </div>
 
                 <div className="link">
