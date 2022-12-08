@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <SessionProvider session={pageProps.session}>
       <Provider store={store}>
-      <Component {...pageProps} />
+      <Component {...pageProps} />  
       </Provider>
     </SessionProvider>
   );
