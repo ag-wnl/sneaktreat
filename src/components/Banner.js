@@ -13,16 +13,17 @@ function Banner() {
             showIndicators={false}
             showThumbs={false}
             interval={5000}
+            
         >
             <div>
-                <img loading='lazy' src='https://plummour.com/wp-content/uploads/2021/12/Balenciaga-banner-2.jpg' alt='banner' />
+                <img loading='lazy' src='https://i.imgur.com/YGmk2qL.png' alt='banner' />
             
             </div>
-                <img loading='lazy' src='https://i.imgur.com/rRexoBr.png' alt='banner' />
+                <img loading='lazy' src='https://i.imgur.com/Vev4Mpo.png' alt='banner' />
             
             <div>
 
-                <img loading='lazy' src='https://i.imgur.com/OzSnvze.png' alt='banner' />
+                <img loading='lazy' src='https://i.imgur.com/AnkaPEf.png' alt='banner' />
 
             </div>
            
