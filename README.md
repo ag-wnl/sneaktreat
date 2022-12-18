@@ -2,6 +2,8 @@
 
 Sneaktreat is a sneaker reselling website. Checkout sneaktreat.vercel.app
 
+![Site Screenshot](https://i.imgur.com/VHx2R6B.png)
+
 
 ## Deployment
 
