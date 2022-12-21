@@ -38,7 +38,7 @@ function Header({ products }) {
   return (
     <header>
         {/* className="z-50 fixed top-0 w-full" */}
-        <div className="flex items-center bg-sneaktreat_white p-2 flex-grow py-2">
+        <div className="flex items-center bg-sneaktreat_white p-2 flex-grow py-2 ">
             <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
                 <Image 
                     onClick={() => router.push('/')}
@@ -65,7 +65,7 @@ function Header({ products }) {
             <div className="text-white flex items-center text-xs space-x-7 mx-6 whitespace-nowrap font-sans hover:text-gray-200">
                 <div onClick={!session ? signIn : signOut} className="link">
                      <UserCircleIcon className="h-7 mx-auto" />
-                     <p className="font-medium md:text-sm">
+                     <p className="font-medium md:text-xs">
                         {session ? `${session.user.name}` : "Sign In"}
                      </p>
                 </div>
@@ -85,7 +85,7 @@ function Header({ products }) {
             </div>
         </div>
 
-        <div className="flex items-center bg-purple-200  text-black text-sm space-x-10 p-1 pl-5">
+        <div className="flex space-x-10 p-1 pl-5 pr-5  overflow-x-auto items-center bg-purple-200  text-black text-sm">
             <p 
             onClick={() => router.push("/raredrops")}
             className="link flex items-center">  
@@ -104,12 +104,13 @@ function Header({ products }) {
 
             <p 
             onClick={() => router.push("/apparel")}
-            className="link hidden md:inline-flex">
+            className="link flex items-center">
+                {/* link hidden sm:inline-flex */}
                 Apparel
             </p>
             <p 
             onClick={() => router.push("/collectibles")}
-            className="link hidden lg:inline-flex">
+            className="link flex items-center">
                 Collectibles
             </p>
         </div>

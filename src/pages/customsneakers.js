@@ -24,11 +24,11 @@ function customsneakers({ products }) {
     <div>
         <Header />
 
-        <div className="border-b pb-5">
+        <div className='border-b pb-5'>
 
-            <h1 className='tracking-widest ml-8 p-8 text-xl text-gray-700'>EXCLUSIVE CUSTOM SNEAKERS</h1>
+            <h1 className='tracking-widest ml-8 p-8 text-xl text-gray-700 '>EXCLUSIVE CUSTOM SNEAKERS</h1>
 
-            <h2 className='tracking-wider ml-14 mr-2 p-1 text-xs text-gray-800 mx-auto font-medium'>Custom crafted Sneakers by the talented who express themselves on a canvas called "Sneaker".</h2>
+            <h2 className='tracking-wider ml-14 mr-2 p-1 text-xs text-gray-800 mx-auto font-medium border-b pb-5'>Custom crafted Sneakers by the talented who express themselves on a canvas called "Sneaker".</h2>
 
             <div className='grid grid-flow-row-dense xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 mx-auto'>
             {filteredSneakCustom.map(({id, title, price, description, category, image}) => (
