@@ -20,7 +20,7 @@ function ProductCata({ products }) {
           />
         ))}
 
-        <div className='relative md:col-span-full flex mb-4 space-x-10 ml-8 mr-8 overflow-x-auto cursor-pointer'>
+        <div className='relative md:col-span-full flex mb-4 space-x-10 ml-8 mr-8 overflow-x-auto cursor-pointer justify-start'>
           <img 
           onClick={() => router.push("/apparel")}
           src='https://i.imgur.com/cdGEaVT.png'/>
