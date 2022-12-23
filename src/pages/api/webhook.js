@@ -1,30 +1,30 @@
 import { buffer } from 'micro';
-import { initializeApp } from 'firebase-admin/app'
-import { getApp } from 'firebase-admin/app'
-import { cert } from 'firebase-admin/app'
+import * as admin from 'firebase-admin'
 
 
 const serviceAccount = require('../../../permissions.json');
 
-const app = initializeApp({
-    credential: cert(serviceAccount),
-})
+const app = admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+}); 
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
 const compOrder = async (session) => {
-    return app.firestore().collection("users").doc(session.metadata.email)
-    .collection("orders").doc(session.id).set({
-        amount: session.amount_total / 100,
-        amount_shipping: session.total_details.amount_shipping / 100,
-        images: JSON.parse(session.metadata.images),
-        timestamp: admin.firestore.FieldValue.serverTimestamp()
-    })
-    .then(() => {
-        console.log(`SUCCESS: Order ${session.id} added to the database`)
-    });
+    return app
+        .firestore()
+        .collection("users")
+        .doc(session.metadata.email)
+        .collection("orders").doc(session.id).set({
+            amount: session.amount_total / 100,
+            images: JSON.parse(session.metadata.images),
+            timestamp: admin.firestore.FieldValue.serverTimestamp()
+        })
+        .then(() => {
+            console.log(`SUCCESS: Order ${session.id} added to the database`)
+        });
 };
 
 export default async (req, res) => {

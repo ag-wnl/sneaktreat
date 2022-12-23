@@ -3,6 +3,7 @@ import React from 'react'
 import Header from '../components/Header'
 import db from "../../firebase"
 import Order from '../components/Order';
+import moment from "moment";
 
 function Orders({ orders }) {
     const {data : session} = useSession();
@@ -10,21 +11,20 @@ function Orders({ orders }) {
     <div>
         <Header />
         <main className='max-w-screen-lg mx-auto p-5'>
-            <h1 className='text-3xl border-bottom mb-1 pb-1 border-purple-300'>Your Orders</h1>
+            <h1 className='text-3xl border-b mb-1 pb-4 border-purple-300'>Your Orders</h1>
 
             {session ? (
-                <h2>Your Orders</h2>
+                <h2>{orders.length} Orders </h2>
             ) : (
                 <h2>Sign In to View Orders</h2>
             )}
 
             <div className='mt-4 space-y-5'>
-                {orders?.map(({id, amount, amountShipping, items, timestamp, images}) => (
+                {orders?.map(({id, amount, items, timestamp, images}) => (
                     <Order 
                         key={id}
                         id={id}
                         amount={amount}
-                        amountShipping={amountShipping}
                         items={items}
                         timestamp={timestamp}
                         images={images}
@@ -55,8 +55,8 @@ export async function getServerSideProps(context) {
         stripeOrders.docs.map(async (order) => ({
             id: order.id,
             amount: order.data().amount,
-            amountShipping: order.data().amount_shipping,
             images: order.data().images,
+            timestamp: moment(order.data().timestamp.toDate()).unix(),
             items: (
                 await stripe.checkout.sessions.listLineItems(order.id, {
                     limit: 100,
@@ -68,7 +68,6 @@ export async function getServerSideProps(context) {
     return{
         props: {
             orders,
-
         }
     }
 }
