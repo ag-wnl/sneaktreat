@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .link{
+        @apply cursor-pointer hover:shadow;
+        /* hover:text-gray-200 */
+    }
+
+    .button {
+        @apply rounded transition ease-in-out delay-150 bg-purple-400 hover:-translate-y-1 hover:scale-110 hover:bg-purple-500 duration-200 p-2 text-xs md:text-sm;
+    }
+}
