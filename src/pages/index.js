@@ -20,8 +20,10 @@ export default function Home({ products }) {
 
     
     <main className="max-w-screen-2xl mx-auto">
+      <div className="ml-10 mr-10">
+        <Banner />
+      </div>
       
-      <Banner />
 
       <h1 className="tracking-widest ml-8 p-8 text-xl text-gray-700">NEW ARRIVALS</h1>
 
