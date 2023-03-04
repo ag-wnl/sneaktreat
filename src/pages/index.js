@@ -20,7 +20,7 @@ export default function Home({ products }) {
 
     
     <main className="max-w-screen-2xl mx-auto">
-      <div className="ml-10 mr-10">
+      <div className="lg:ml-10 lg:mr-10">
         <Banner />
       </div>
       
