@@ -16,14 +16,15 @@ function Banner() {
             
         >
             <div>
-                <img loading='lazy' src='https://i.imgur.com/YGmk2qL.png' alt='banner' />
+                {/* loading='lazy'  */}
+                <img src='https://i.imgur.com/YGmk2qL.png' alt='banner' />
             
             </div>
-                <img loading='lazy' src='https://i.imgur.com/Vev4Mpo.png' alt='banner' />
+                <img src='https://i.imgur.com/Vev4Mpo.png' alt='banner' />
             
             <div>
 
-                <img loading='lazy' src='https://i.imgur.com/AnkaPEf.png' alt='banner' />
+                <img src='https://i.imgur.com/AnkaPEf.png' alt='banner' />
 
             </div>
            

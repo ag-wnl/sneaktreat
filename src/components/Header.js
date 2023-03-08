@@ -45,7 +45,7 @@ function Header({ products }) {
     <header>
         {/* for small screen like mobiles */}
 
-        <div className="sticky w-full top-0 z-50 flex space-x-7 items-center bg-sneaktreat_white p-2 flex-grow py-2 md:hidden">
+        <div className="sticky w-full top-0 z-50 flex space-x-7 items-center bg-sneaktreat_white p-2 flex-grow py-2 md:hidden ">
 
             {/* other items in header */}
             {/* <div className="hidden rounded sm:flex bg-purple-400  flex-grow cursor-pointer hover:bg-purple-300 mt-1 ml-2 h-10">
@@ -66,17 +66,35 @@ function Header({ products }) {
             </div>
 
             
-            <div className={`rounded text-black flex-col items-center text-sm w-auto  font-sans overflow-y-auto space-y-7 bg-gradient-to-r from-white via-white to-gray-100 absolute p-5 z-10 transition-all duration-300 ease-in ${open ? 'left-[-28px] top-[69px]': 'left-[-190px] top-[69px]'} `}>
+            <div className={`rounded text-black flex-col items-center text-sm font-sans overflow-y-auto space-y-8 w-screen bg-gradient-to-r from-white via-white to-purple-100 absolute p-5 z-10 transition-all duration-500 ease-in ${open ? 'left-[-28px] top-[69px]': 'left-[-720px] top-[69px]'} `}>
                 <div onClick={!session ? signIn : () => router.push("/accountpage")} className="link">
 
-                     <UserCircleIcon className="h-7 mb-1" />
-                     <p className="font-medium md:text-xs">
+                     <UserCircleIcon className="h-7 mb-1 ml-7" />
+                     <p className="font-medium text-base md:text-xs">
                         {session ? `${session.user.name}` : "Sign In"}
                      </p>
                 </div>
 
                 <div onClick={() => router.push("/orders")} className="link">
-                    <p className="font-medium md:text-sm tracking-wide ">Orders</p>
+                    <p className="font-medium text-base md:text-sm tracking-wide ">ORDERS</p>
+                </div>
+
+                <div onClick={() => router.push("/raredrops")} className="link">
+                    <p className="font-medium text-base md:text-sm tracking-wide">
+                        RARE DROPS</p>
+                </div>
+
+                <div onClick={() => router.push("/customsneakers")} className="link">
+                    <p className="font-medium text-base md:text-sm tracking-wide">
+                        CUSTOM SNEAKERS</p>
+                </div>
+
+                <div onClick={() => router.push("/apparel")} className="link">
+                    <p className="font-medium text-base md:text-sm tracking-wide">APPAREL</p>
+                </div>
+
+                <div onClick={() => router.push("/collectibles")} className="link">
+                    <p className="font-medium text-base md:text-sm tracking-wide">COLLECTIBLES</p>
                 </div>
 
             </div>
