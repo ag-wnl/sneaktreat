@@ -3,10 +3,12 @@ import Image from "next/image";
 import Currency from "react-currency-formatter";
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../slices/basketSlice';
+import { useRouter } from "next/router";
 
 function Product({ id, title, price, description, category, image }) {
 
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const addItemCart = () => {
     const product = {
@@ -27,7 +29,10 @@ function Product({ id, title, price, description, category, image }) {
         
         <Image className='mx-auto' src={image} height={200} width={200} objectFit='contain' />
 
-        <h4 className='my-3'>{title}</h4>
+        <h4 
+        className='my-3 cursor-pointer'
+        onClick={() => router.push(`/productss/${id}`)}
+        >{title}</h4>
 
         <p className='text-xs my-2 line-clamp-2'>{description}</p>
 

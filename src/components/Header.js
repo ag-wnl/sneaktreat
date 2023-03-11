@@ -67,7 +67,7 @@ function Header({ products }) {
 
             
             <div className={`rounded text-black flex-col items-center text-sm font-sans overflow-y-auto space-y-8 w-screen bg-gradient-to-r from-white via-white to-purple-100 absolute p-5 z-10 transition-all duration-500 ease-in ${open ? 'left-[-28px] top-[69px]': 'left-[-720px] top-[69px]'} `}>
-                <div onClick={!session ? signIn : () => router.push("/accountpage")} className="link">
+                <div onClick={!session ? signIn : () => router.push("/accountpage")} className="link mt-3">
 
                      <UserCircleIcon className="h-7 mb-1 ml-7" />
                      <p className="font-medium text-base md:text-xs">
@@ -94,7 +94,7 @@ function Header({ products }) {
                 </div>
 
                 <div onClick={() => router.push("/collectibles")} className="link">
-                    <p className="font-medium text-base md:text-sm tracking-wide">COLLECTIBLES</p>
+                    <p className="font-medium text-base mb-3 md:text-sm tracking-wide">COLLECTIBLES</p>
                 </div>
 
             </div>
