@@ -1,19 +1,39 @@
+
 # Sneaktreat
 
-Sneaktreat is a sneaker reselling website. Checkout sneaktreat.vercel.app
-
-![Site Screenshot](https://i.imgur.com/mvXRwA2.png)
+A sneaker and apparel reselling marketplace.
 
 
 ## Deployment
 
-To deploy this project using yarn, run: 
+To deploy this project run
 
+```bash
+  npm run dev
+```
+or if you use yarn :
 ```bash
   yarn run dev
 ```
 
 
-## 🔗 Links
-[![Github](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/ag-wnl)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/agnideep/)
+## Features
+
+- User Authentication
+- Payment Processing
+- Keeps track of previous orders
+- The Sneaktreat API !!
+
+
+## Roadmap
+
+- Improvements in UI
+- Add individual item pages
+- Add more login options and login UI cleaner
+
+
+## Screenshots
+
+![App Screenshot](https://i.imgur.com/RRTjF5a.jpeg)
+
+
