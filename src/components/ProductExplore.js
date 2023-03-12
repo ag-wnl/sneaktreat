@@ -6,7 +6,7 @@ import { addToBasket } from '../slices/basketSlice';
 import { useRouter } from "next/router";
 import Link from 'next/link'
 
-function Product({ id, title, price, description, category, image }) {
+function ProductExplore({ id, title, price, description, category, image }) {
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -31,7 +31,7 @@ function Product({ id, title, price, description, category, image }) {
         <Image className='mx-auto' src={image} height={200} width={200} objectFit='contain' />
 
 
-        <Link href="productss/[id]" as={`/productss/${id}`}>
+        <Link href="/productss/[id]" as={`/productss/${id}`}>
           <h4 
           className='my-3 cursor-pointer'
           // onClick={() => router.push(`/productss/${id}`)}
@@ -57,4 +57,4 @@ function Product({ id, title, price, description, category, image }) {
   );
 }
 
-export default Product;
+export default ProductExplore;
