@@ -1,6 +1,8 @@
 import React from 'react'
 import Product from './Product';
 import { useRouter } from "next/router";
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function ProductCata({ products }) {
 
@@ -29,7 +31,8 @@ function ProductCata({ products }) {
           src='https://i.imgur.com/UT5C4U1.png'/>
 
         </div>
-      
+
+        
 
         {/* <img className='md:col-span-full flex-col' src='https://cdn.shopify.com/s/files/1/0133/9195/3977/collections/Louis_Vuitton_Sneaker_Banner.jpg?v=1657820036' /> */}
         

@@ -29,11 +29,11 @@ function ProductPage({ id, title, price, description, category, image}) {
 
 
   return (
-    <div className='relative m-5 p-2 md:p-2'>
+    <div className='relative  md:p-2'>
         {/* <p className='absolute top-2 right-2 text-xs'>{category}</p> */}
         
         <h1 
-          className='my-3 w-screen mb-5 text-lg md:text-3xl'
+          className='my-3 ml-4 mb-5 font-medium text-md md:text-3xl'
         >{title}</h1>
         
         <div className=''>
@@ -41,13 +41,14 @@ function ProductPage({ id, title, price, description, category, image}) {
          
         </div>
         
-        <p className='overflow-clip	text-xs mr-20 my-2 md:text-sm md:w-screen'>{description}</p>
-
-        <div className='mb-5 mt-4'>
+        <div className='mb-5 ml-4 mt-4'>
           <Currency quantity={price} />
         </div>
 
-        <button onClick={addItemCart} className='mt-auto button'>Add to Cart</button>
+        <button onClick={addItemCart} className='mt-auto ml-4 mb-3 button'>Add to Cart</button>
+
+        <p className='overflow-clip	m-4 text-xs mr-20 my-2 md:text-sm'>{description}</p>
+
 
         
     </div>

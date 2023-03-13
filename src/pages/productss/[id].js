@@ -60,7 +60,7 @@ const produkt = ({products}) => {
         </div>
 
         <div className='grid grid-flow-row-dense xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 mx-auto'>
-          {filteredSneakMore.slice(0,4).map(({id, title, price, description, category, image}) => (
+          {filteredSneakMore.slice(0,6).map(({id, title, price, description, category, image}) => (
             <ProductExplore 
               key={id}
               id={id}
