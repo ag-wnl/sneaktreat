@@ -4,11 +4,13 @@ import Currency from "react-currency-formatter";
 import { useDispatch } from 'react-redux';
 
 import { useRouter } from "next/router";
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import Product from '../../components/Product';
-import ProductPage from '../../components/ProductPage';
-import ProductExplore from '../../components/ProductExplore';
+
+import { stringify } from 'postcss';
+import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
+import ProductCata from '../../../components/ProductCata';
+import ProductExplore from '../../../components/ProductExplore';
+import ProductPage from '../../../components/ProductPage';
 
 
 export async function getServerSideProps(context) {
@@ -28,13 +30,13 @@ export async function getServerSideProps(context) {
 const produkt = ({products}) => {
 
   const router = useRouter();
-  const {id} = router.query;
   const {category} = router.query;
-  console.log
+  const {id} = router.query;
   const x = Number(`${id}`);
-  const y = String(`${category}`);
+  const z = (`${category}`);
+  // const y = z.toString();
   const filteredSneak = products.filter(product => product.id === x);
-  const filteredSneakMore = products.filter(product => product.category === "sneaker");
+  const filteredSneakMore = products.filter(product => product.category === z && (product.id != x));
   
 
   return (
@@ -61,7 +63,7 @@ const produkt = ({products}) => {
 
         <div className='grid grid-flow-row-dense xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 mx-auto'>
           {filteredSneakMore.slice(0,6).map(({id, title, price, description, category, image}) => (
-            <ProductExplore 
+            <ProductExplore
               key={id}
               id={id}
               title={title}

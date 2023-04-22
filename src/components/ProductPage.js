@@ -33,21 +33,21 @@ function ProductPage({ id, title, price, description, category, image}) {
         {/* <p className='absolute top-2 right-2 text-xs'>{category}</p> */}
         
         <h1 
-          className='my-3 ml-4 mb-5 font-medium text-md md:text-3xl'
+          className='my-3 ml-4 mb-5 font-medium text-2xl md:text-3xl'
         >{title}</h1>
         
         <div className=''>
-          <Image className='mx-auto ml-5' src={image} height={200} width={200}/>
+          <Image className='mx-auto ml-5' src={image} height={400} width={400}/>
          
         </div>
         
-        <div className='mb-5 ml-4 mt-4'>
+        <div className='mb-5 ml-4 mt-4 text-2xl'>
           <Currency quantity={price} />
         </div>
 
-        <button onClick={addItemCart} className='mt-auto ml-4 mb-3 button'>Add to Cart</button>
+        <button onClick={addItemCart} className='mt-auto text-lg  ml-4 mb-3 button'>Add to Cart</button>
 
-        <p className='overflow-clip	m-4 text-xs mr-20 my-2 md:text-sm'>{description}</p>
+        <p className='overflow-clip	m-4 text-sm mr-20 my-2 md:text-md'>{description}</p>
 
 
         

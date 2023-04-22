@@ -44,8 +44,6 @@ function customsneakers({ products }) {
             ))}
         </div>
 
-            
-
         </div>
 
         <Footer />

@@ -28,10 +28,10 @@ function Product({ id, title, price, description, category, image }) {
     <div className='relative flex flex-col m-5  z-30 p-10'>
         <p className='absolute top-2 right-2 text-xs'>{category}</p>
         
-        <Image className='mx-auto' src={image} height={200} width={200} objectFit='contain' />
 
+        <Link href="productss/[category]/[id]" as={`/productss/${category}/${id}`}>
 
-        <Link href="productss/[id]" as={`/productss/${id}`}>
+          <Image className='mx-auto' src={image} height={200} width={200} objectFit='contain' />
           <h4 
           className='my-3 cursor-pointer'
           // onClick={() => router.push(`/productss/${id}`)}
