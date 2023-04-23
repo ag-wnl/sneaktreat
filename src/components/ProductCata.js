@@ -22,7 +22,7 @@ function ProductCata({ products }) {
           />
         ))}
 
-        <div className='relative md:col-span-full flex mb-4 space-x-10 ml-8 mr-8 overflow-x-auto cursor-pointer justify-start'>
+        <div className='relative md:col-span-full mx-auto flex mb-4 space-x-10 overflow-x-auto cursor-pointer justify-start'>
           <img 
           onClick={() => router.push("/apparel")}
           src='https://i.imgur.com/cdGEaVT.png'/>
@@ -33,8 +33,6 @@ function ProductCata({ products }) {
         </div>
 
         
-
-        {/* <img className='md:col-span-full flex-col' src='https://cdn.shopify.com/s/files/1/0133/9195/3977/collections/Louis_Vuitton_Sneaker_Banner.jpg?v=1657820036' /> */}
         
 
         {products.slice(4,16).map(({id, title, price, description, category, image}) => (

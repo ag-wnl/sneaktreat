@@ -32,6 +32,8 @@ function ProductPage({ id, title, price, description, category, image}) {
     <div className='relative  md:p-2'>
         {/* <p className='absolute top-2 right-2 text-xs'>{category}</p> */}
         
+        {/* Mobile Screen */}
+
         <h1 
           className='my-3 ml-4 mb-5 font-medium text-2xl md:text-3xl'
         >{title}</h1>
