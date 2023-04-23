@@ -39,7 +39,7 @@ function ProductPage({ id, title, price, description, category, image}) {
         >{title}</h1>
         
         <div className=''>
-          <Image className='mx-auto ml-5' src={image} height={400} width={400}/>
+          <Image className='mx-auto ml-5' src={image} height={340} width={340}/>
          
         </div>
         
