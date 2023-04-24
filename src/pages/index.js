@@ -37,8 +37,10 @@ export default function Home({ products }) {
   );
 }
 
+// https://api.npoint.io/06c058f2d597ee5251d3
+
 export async function getServerSideProps() {
-    const products = await fetch("https://api.npoint.io/06c058f2d597ee5251d3").then(
+    const products = await fetch("https://api.npoint.io/7448dad05c71c966b960").then(
       (res) => res.json()
     );
 

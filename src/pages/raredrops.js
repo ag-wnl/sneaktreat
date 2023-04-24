@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Product from '../components/Product';
 
 export async function getServerSideProps(context) {
-    const products = await fetch("https://api.npoint.io/06c058f2d597ee5251d3").then(
+    const products = await fetch("https://api.npoint.io/7448dad05c71c966b960").then(
       (res) => res.json()
     );
 

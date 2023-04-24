@@ -69,7 +69,7 @@ function Checkout() {
                     <>
                         <h2 className='whitespace-nowrap'>Subtotal ({items.length} items):
                         <span className='font-medium p-1'>
-                            <Currency quantity= {total} />
+                            <Currency quantity= {total} symbol="₹"  pattern="! ##,### " />
                         </span>
                         </h2>
 
